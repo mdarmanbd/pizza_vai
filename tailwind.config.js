@@ -5,7 +5,20 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        'raleway' : ['Raleway'],
+        'rubik' : ['Rubik']
+      },
+      colors:{
+        midnightBlue : '#040D12',
+        charcoal : '#333333',
+        raspberryPink : '#e21b70',
+        lightPink : '#fcf1f6'
+
+
+      },
+    },
   },
   plugins: [],
 }
