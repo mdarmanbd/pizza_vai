@@ -15,8 +15,9 @@ export default {
         charcoal : '#333333',
         raspberryPink : '#e21b70',
         lightPink : '#fcf1f6'
-
-
+      },
+      width:{
+        45 : '45%',
       },
     },
   },
