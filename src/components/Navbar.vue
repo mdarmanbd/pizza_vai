@@ -2,13 +2,14 @@
 import { ref } from 'vue'
 import {nav} from '../store/nav.js'
 import GoogleMapLocation from './GoogleMapLocation.vue';
+import LogInFrom from './LogInFrom.vue';
 
 </script>
 
 <template>
   <section class="w-full">
     <!----laptob view---->
-    <div class="hidden sm:hidden md:hidden lg:flex xl:flex py-2 justify-between w-full">
+    <div class="hidden sm:hidden md:hidden lg:flex xl:flex sticky py-2 justify-between w-full bg-white px-20">
         <div class="flex gap-2">
             <div class="">
                 <img src="../assets/pizzaLogo.svg">
@@ -22,10 +23,10 @@ import GoogleMapLocation from './GoogleMapLocation.vue';
             <h3 class="font-raleway text-base text-charcoal pt-1">New address <span class="text-raspberryPink font-semibold"> Road 16 Uttara Dhaka </span> </h3>
         </div>
         <div class="flex gap-4">
-            <button class="hover:translate-y-1 hover:transition-all transition-all hover:bg-lightPink bg-transparent px-5 border border-raspberryPink rounded-lg pb-1  text-raspberryPink text-base font-raleway font-medium w-28 h-9">
+            <button @click="nav.LogInBtn" class="hover:translate-y-1 hover:transition-all transition-all hover:bg-lightPink bg-transparent px-5 border border-raspberryPink rounded-lg pb-1  text-raspberryPink text-base font-raleway font-medium w-28 h-9">
                 Log in
             </button>
-            <button class="hover:translate-y-1 hover:transition-all transition-all bg-raspberryPink px-5 border border-raspberryPink rounded-lg pb-1  text-white text-base font-raleway font-medium w-28 h-9">
+            <button @click="nav.SignUpBtn" class="hover:translate-y-1 hover:transition-all transition-all bg-raspberryPink px-5 border border-raspberryPink rounded-lg pb-1  text-white text-base font-raleway font-medium w-28 h-9">
                 Sign up
             </button>
             <div class=" flex gap-1 justify-center hover:bg-lightPink rounded-lg">
@@ -67,8 +68,11 @@ import GoogleMapLocation from './GoogleMapLocation.vue';
             </div>
         </div>
     </div>
+    <!---Log in from--->
+    <LogInFrom></LogInFrom>
+  
     <!--- location view --->
-    <div v-if="nav.LocationView" class="w-full">
+    <div v-if="nav.LocationView" class="w-full pt-10">
         <div class="w-1/2 mx-auto">
             <div class="bg-white shadow-lg z-80 rounded-lg px-3 py-4">
                 <div class="flex justify-between">
@@ -90,8 +94,8 @@ import GoogleMapLocation from './GoogleMapLocation.vue';
                 </div>
 
                 <div class="pt-3">
-                    <!-- <img class="w-full h-auto" src="../assets/googleMap.jpg"> -->
-                    <GoogleMapLocation></GoogleMapLocation>
+                    <img class="w-full h-auto" src="../assets/googleMap.jpg">
+                    <!-- <GoogleMapLocation></GoogleMapLocation> -->
                 </div>
 
             </div>

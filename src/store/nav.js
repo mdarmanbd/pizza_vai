@@ -7,9 +7,12 @@ const nav = reactive({
     LocatedArrow : false,
     LocationView : false,
     CloseLocationView : false,
+    LogIn : false,
+    SignUp : false,
 
    Location(){
     this.NavLocation = true
+    this.LogIn = false
    },
    RightSearchArrow(){
     if(!this.SearchLocation.length){
@@ -31,6 +34,22 @@ const nav = reactive({
     this.LocationView = false
     this.LocatedArrow = !this.LocatedArrow
     this.SearchLocation = ''
+   },
+   LogInBtn(){
+    this.LogIn = true
+    this.NavLocation = false
+    this.LocationView = false
+
+    
+   },
+   SignUpBtn(){
+    this.LogIn = true
+    this.NavLocation = false
+    this.LocationView = false
+   },
+   closeLogIn(){
+    this.LogIn = false
+    
    }
     
 })

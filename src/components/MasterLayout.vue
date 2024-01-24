@@ -10,7 +10,7 @@ const count = ref(0)
 
 <template>
   <section class="w-full bg-gray-50">
-    <div class="w-11/12 mx-auto">
+    <div class="">
       <!--- navbar --->
       <Navbar></Navbar>
     </div>
