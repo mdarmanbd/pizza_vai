@@ -9,7 +9,7 @@ import LogInFrom from './LogInFrom.vue';
 <template>
   <section class="w-full">
     <!----laptob view---->
-    <div class="hidden sm:hidden md:hidden lg:flex xl:flex sticky py-2 justify-between w-full bg-white px-20">
+    <div class="hidden sm:hidden md:hidden lg:flex xl:flex sticky py-2 justify-between w-full bg-white px-20 shadow-lg">
         <div class="flex gap-2">
             <div class="">
                 <img src="../assets/pizzaLogo.svg">
