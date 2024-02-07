@@ -11,10 +11,9 @@ const count = ref(0)
 
 <template>
   <section class="w-full ">
-    <div class="">
       <!--- navbar --->
       <Navbar></Navbar>
-    </div>
+    
     <div class="w-full ">
       <!--- bennar --->
       <div class="">

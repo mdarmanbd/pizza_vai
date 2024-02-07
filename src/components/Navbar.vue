@@ -7,9 +7,9 @@ import LogInFrom from './LogInFrom.vue';
 </script>
 
 <template>
-  <section class="w-full">
+  <section class="w-full sticky top-0 overflow-hidden">
     <!----laptob view---->
-    <div class="hidden sm:hidden md:hidden lg:flex xl:flex sticky py-2 justify-between w-full bg-white px-20 shadow-lg">
+    <div class="hidden sm:hidden md:hidden lg:flex xl:flex py-2 justify-between w-full bg-white px-20 shadow-lg ">
         <div class="flex gap-2">
             <div class="">
                 <img src="../assets/pizzaLogo.svg">
@@ -104,7 +104,7 @@ import LogInFrom from './LogInFrom.vue';
     </div>
 
     <!---responsive view-->
-    <div class="block sm:block md:block lg:hidden xl:hidden w-full py-2">
+    <div class="block sm:block md:block lg:hidden xl:hidden w-full py-2 bg-white px-3">
         <div class="flex justify-between w-full">
             <div class="">
                 <img src="../assets/person.svg">
