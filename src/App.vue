@@ -3,13 +3,16 @@ import MasterLayout from './components/MasterLayout.vue'
 </script>
 
 <template>
-  <div>
+  <section class="w-full">
 
+    
+        <MasterLayout></MasterLayout>
+    
 
-  <MasterLayout></MasterLayout>
+       
 
+  </section>
 
-  </div>
  
 </template>
 

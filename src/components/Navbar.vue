@@ -7,7 +7,7 @@ import LogInFrom from './LogInFrom.vue';
 </script>
 
 <template>
-  <section class="w-full sticky top-0 overflow-hidden">
+  <section class="w-full sticky top-0 z-40">
     <!----laptob view---->
     <div class="hidden sm:hidden md:hidden lg:flex xl:flex py-2 justify-between w-full bg-white px-20 shadow-lg ">
         <div class="flex gap-2">
