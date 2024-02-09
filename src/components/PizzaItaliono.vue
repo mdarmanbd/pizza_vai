@@ -1,4 +1,24 @@
 <script setup>
+import {ref,onBeforeMount,watch} from 'vue';
+import axios from 'axios';
+
+const items = ref ([]);
+const products = ref([]);
+
+
+const fatchData = (twenty) =>{
+    axios.get(`https://dummyjson.com/recipes?limit=${twenty}`)
+    .then(respon => {
+        items.value = respon.data.recipes
+        console.log(items)
+
+        
+    })
+}
+
+onBeforeMount(()=>{
+    fatchData(20)
+})
 
 
 </script>
@@ -36,14 +56,17 @@
             </div>
         </div>
         <!------->
+        <div>
+           <!-- {{ items }} -->
+        </div>
         <div class="w-full">
             <div class="bg-white shadow-lg border-t rounded">
                 <div class="flex py-3 px-2">
                     <input class="w-52 border border-gray-100 px-4 pt-1 pb-2 rounded-3xl bg-gray-100" placeholder="serach your item">
-                    <div class="pl-5 flex space-x-8 pt-1">
-                        <p class="text-gray-800 font-rubik text-base font-medium">sancks (4)</p>
-                        <p class="text-gray-800 font-rubik text-base font-medium">sancks (4)</p>
-                        <p class="text-gray-800 font-rubik text-base font-medium">sancks (4)</p>
+                    <div v-for="(item,index) in items" :key="item.id" class="pl-5 flex space-x-8 pt-1">
+                        <div v-if="item.id <= 10" class="">
+                            <p class="text-gray-700 font-rubik text-base font-medium">{{ item.tags[0] }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
