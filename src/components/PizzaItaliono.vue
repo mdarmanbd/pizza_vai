@@ -1,6 +1,7 @@
 <script setup>
 import {ref,onBeforeMount,watch} from 'vue';
 import axios from 'axios';
+import ItemComponent from './IteamComponent.vue';
 
 const items = ref ([]);
 const products = ref([]);
@@ -61,12 +62,34 @@ onBeforeMount(()=>{
         </div>
         <div class="w-full">
             <div class="bg-white shadow-lg border-t rounded">
-                <div class="flex py-3 px-2">
+                <div class="flex py-3 px-2 shadow-sm">
                     <input class="w-52 border border-gray-100 px-4 pt-1 pb-2 rounded-3xl bg-gray-100" placeholder="serach your item">
-                    <div v-for="(item,index) in items" :key="item.id" class="pl-5 flex space-x-8 pt-1">
-                        <div v-if="item.id <= 10" class="">
-                            <p class="text-gray-700 font-rubik text-base font-medium">{{ item.tags[0] }}</p>
+                    <div v-for="(item,index) in items" :key="item.id" class="pl-4 flex space-x-8 pt-1">
+                        <div v-if="item.id <= 6" class="flex">
+                            <p class="text-gray-700 font-rubik text-base font-medium ">{{ item.tags[0] }} </p>
+                            <p class="text-gray-600 font-rubik text-base font-normal pl-0.5">({{ item.servings }})</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <!--popular-->
+            <div class="w-full bg-white pt-5">
+                <div class="flex pb-1">
+                    <img src="../assets/fire.svg">
+                    <p class="text-gray-900 font-semibold font-raleway pl-0.5 text-lg">Popular</p>
+                </div>
+                <p class="text-gray-800 font-raleway text-sm">Most orderd right now.</p>
+            </div>
+            <!------>
+            <div class="w-full bg-white">
+                <div class="flex gap-5">
+                    <!------>
+                    <div class="w-2/3">
+                        <ItemComponent :items="items"></ItemComponent>
+                    </div>
+                    <!------>
+                    <div class="w-2/6 bg-green-200">
+
                     </div>
                 </div>
             </div>
