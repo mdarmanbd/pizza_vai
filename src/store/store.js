@@ -2,9 +2,10 @@ import{reactive} from 'vue'
 
 
 const store = reactive({
-  pizza : true,
-  pizzaItaliono(){
-    this.pizza = false;
+  totalItem : [''],
+
+  selectItem(item){
+    console.log(item)
   }
 
 })
