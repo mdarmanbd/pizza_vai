@@ -2,11 +2,11 @@ import{reactive} from 'vue'
 
 
 const store = reactive({
-  totalItem : [''],
+  // totalItem : [''],
 
-  selectItem(item){
-    console.log(item)
-  }
+  // selectItem(item){
+  //   console.log(item)
+  // }
 
 })
 

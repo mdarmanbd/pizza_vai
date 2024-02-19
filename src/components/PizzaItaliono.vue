@@ -85,7 +85,7 @@ onBeforeMount(()=>{
                 <div class="flex gap-5">
                     <!------>
                     <div class="w-2/3">
-                        <ItemComponent :items="items"></ItemComponent>
+                        <ItemComponent ></ItemComponent>
                     </div>
                     <!------>
                     <div class="w-2/6 bg-green-200">
