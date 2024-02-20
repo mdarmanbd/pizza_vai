@@ -25,7 +25,7 @@ onBeforeMount(()=>{
 </script>
 
 <template>
-    <section class="w-full px-20 pt-5">
+    <section class="w-full px-3 sm:px-3 md:px-3 lg:px-20 xl:px-20 pt-5">
         <div class="w-full pb-5">
             <h3 class="text-gray-900 font-raleway text-2xl font-semibold capitalize pb-2">royal park residence hotel</h3>
             <div class="flex space-x-2 w-full pb-4">
@@ -85,7 +85,7 @@ onBeforeMount(()=>{
                 <div class="flex gap-5">
                     <!------>
                     <div class="w-2/3">
-                        <ItemComponent ></ItemComponent>
+                        <!-- <ItemComponent ></ItemComponent> -->
                     </div>
                     <!------>
                     <div class="w-2/6 bg-green-200">
