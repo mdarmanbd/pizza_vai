@@ -2,11 +2,11 @@ import{reactive} from 'vue'
 
 
 const store = reactive({
-  // totalItem : [''],
-
-  // selectItem(item){
-  //   console.log(item)
-  // }
+  ItemPopUp : false,
+  
+  silectItemPopUp(){
+    this.ItemPopUp = true
+  }
 
 })
 

@@ -12,7 +12,6 @@ const fatchData = (twenty) =>{
     .then(respon => {
         items.value = respon.data.recipes
         // console.log(items)
-
         
     })
 }
@@ -30,17 +29,17 @@ onBeforeMount(()=>{
             <h3 class="text-gray-900 font-raleway text-2xl font-semibold capitalize pb-2">royal park residence hotel</h3>
             <div class="flex space-x-2 w-full pb-4">
                 <div class="flex gap-2">
-                    <img src="../assets/cycle.svg">
-                    <p class="text-gray-950 font-raleway text-base font-medium">Free delivery</p>
+                    <img src="../assets/cycle.svg" class="w-5 sm:w-5 md:w-5 lg:w-8 xl:w-8">
+                    <p class="text-gray-950 font-raleway text-xs sm:text-xs md:text-base lg:text-base font-medium">Free delivery</p>
                     <img src="../assets/dot.svg">
                 </div>
                 <div class="flex gap-2">
-                    <img src="../assets/shop.svg">
-                    <p class="text-gray-950 font-rubik text-base font-medium">TK 50 minimum</p>
+                    <img src="../assets/shop.svg" class="w-5 sm:w-5 md:w-5 lg:w-8 xl:w-8">
+                    <p class="text-gray-950 font-rubik text-xs sm:text-xs md:text-base lg:text-base font-medium">TK 50 minimum</p>
                     <img src="../assets/dot.svg">
                 </div>
                 <div class="flex">
-                    <p class="text-gray-950 font-raleway text-base font-medium">Service free applices</p>
+                    <p class="text-gray-950 font-raleway text-xs sm:text-xs md:text-base lg:text-base font-medium">Service free applices</p>
                 </div>
             </div>
             <div class="flex">
@@ -63,11 +62,11 @@ onBeforeMount(()=>{
         <div class="w-full">
             <div class="bg-white shadow-lg border-t rounded">
                 <div class="flex py-3 px-2 shadow-lg border-b">
-                    <input class="w-52 border border-gray-100 px-4 pt-1 pb-2 rounded-3xl bg-gray-100" placeholder="serach your item">
-                    <div v-for="(item,index) in items" :key="item.id" class="pl-4 flex space-x-8 pt-1">
+                    <input class="hidden sm:hidden md:block lg:block lg:w-52 border border-gray-100 px-4 pt-1 pb-2 rounded-3xl bg-gray-100" placeholder="serach your item">
+                    <div v-for="(item,index) in items" :key="item.id" class="pl-1 sm:pl-1 md:pl-2 lg:pl-4 flex space-x-8 pt-1 w-24 sm:w-26 md:w-full xl:w-full">
                         <div v-if="item.id <= 6" class="flex">
-                            <p class="text-gray-700 font-rubik text-base font-medium ">{{ item.tags[0] }} </p>
-                            <p class="text-gray-600 font-rubik text-base font-normal pl-0.5">({{ item.servings }})</p>
+                            <p class="text-gray-700 font-rubik text-xs sm:text-xs md:text-base lg:text-base font-medium pl-2 sm:pl-2 md:pl-2 lg:pl-0">{{ item.tags[0] }} </p>
+                            <p class="text-gray-600 font-rubik hidden sm:hidden md:flex lg:flex text-xs sm:text-xs md:text-base lg:text-base font-normal pl-0.5">({{ item.servings }})</p>
                         </div>
                     </div>
                 </div>
@@ -84,18 +83,26 @@ onBeforeMount(()=>{
             <div class="w-full bg-white">
                 <div class="flex gap-5">
                     <!------>
-                    <div class="w-2/3">
-                        <!-- <ItemComponent ></ItemComponent> -->
+                    <div class="w-full sm:w-full md:w-full lg:w-2/3 xl:w-2/3">
+                        <ItemComponent ></ItemComponent>
                     </div>
                     <!------>
-                    <div class="w-2/6 bg-green-200">
-
+                    <div class="hidden sm:hidden md:hidden lg:block xl:block w-2/6 bg-green-200">
+                        <p>kdsajhd</p>
                     </div>
                 </div>
             </div>
         </div>
 
+
+        <!----------->
+
+
+
+
+
     </section>
+    
 
 </template>
 
