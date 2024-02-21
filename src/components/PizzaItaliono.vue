@@ -95,11 +95,6 @@ onBeforeMount(()=>{
         </div>
 
 
-        <!----------->
-
-
-
-
 
     </section>
     

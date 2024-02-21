@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import {nav} from '../store/nav.js'
+import { store } from '../store/store';
 import GoogleMapLocation from './GoogleMapLocation.vue';
 import LogInFrom from './LogInFrom.vue';
 
@@ -135,11 +136,11 @@ import LogInFrom from './LogInFrom.vue';
 
     <!----- select item popup ------>
 
-        <div v-if="false" class="fixed top-0 left-0 w-full h-full bg-lightGray ">
-            <div class="relative w-11/12 sm:w-11/12 md:w-1/2 lg:w-1/2 xl:w-1/2 top-1/3 h-48 bg-green-100 mx-auto rounded opacity-100 ">
-                <div class="grid grid-cols-1 p-3 w-full">
-                    <div class="w-full flex justify-end">
-                      <p>Hello world</p>
+        <div v-if="store.ItemPopUp" class="fixed top-0 left-0 w-full h-full ">
+            <div class="relative w-11/12 sm:w-11/12 md:w-1/2 lg:w-1/2 xl:w-1/2 top-1/3 h-48 bg-green-100 mx-auto rounded  ">
+                <div class="grid grid-cols-1 p-3 w-full ">
+                    <div @click="store.ItemPopUp = false" class="w-full flex justify-end cursor-pointer">
+                      <img src="../assets/cross.svg">
                     </div>
                 </div>
                 <div class="w-11/12 mx-auto">
