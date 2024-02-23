@@ -19,29 +19,37 @@ axios.get(`https://dummyjson.com/recipes/${itemId}`)
 <template>
     <div class="fixed top-0 left-0 w-full h-full">
        
-        <div class="relative w-11/12 sm:w-11/12 md:w-1/2 lg:w-1/2 xl:w-1/2 top-1/3 h-64 bg-green-100 mx-auto rounded  ">
-                <div class="grid grid-cols-1 p-3 w-full ">
-                    <p class="text-xl text-red-500">{{ itemId }}</p>
-                    <div @click="store.closePopup()" class="w-full flex justify-end cursor-pointer">
-                      <img src="../assets/cross.svg">
+        <div class="relative w-11/12 sm:w-11/12 md:w-1/2 lg:w-2/3 xl:w-2/3 top-1/4 h-[55%] pb-10 bg-white rounded-lg mx-auto overflow-y-auto shadow-xl">
+                <div class="w-full">
+                    <img :src="singleProduct.image" class="w-full h-40 rounded-t-lg">
+                    <div @click="store.closePopup()" class="absolute top-2 right-3 bg-white w-9 rounded-full hover:bg-pink-100">
+                        <img src="../assets/cross.svg" class="p-1.5 w-full ">
                     </div>
                 </div>
-                <div class="w-11/12 mx-auto">
-                    <img :src="singleProduct.image" class="w-36">
-                    <P>{{ singleProduct.name }}</P>
-                    <!-- <div class="pb-3 flex justify-start gap-2">
-                        <div class="">
-                           
+                <div class="w-11/12 mx-auto ">
+                    <div class="pt-5">
+                        <P class="text-gray-900 text-xl font-rubik font-semibold pb-1 capitalize">{{ singleProduct.name }}</P>
+                        <P class="text-gray-700 text-base font-rubik font-medium pb-1 ">{{ singleProduct.servings }} pcs </P>
+                    </div>
+                    <div class="pt-3">
+                        <P class="text-gray-900 text-lg font-rubik font-semibold pb-1 capitalize">Tk {{ singleProduct.caloriesPerServing }}</P>
+                    </div>
+                    <div class="pt-3">
+                        <h3 class="text-gray-600 text-xl font-rubik font-semibold pb-1 capitalize">Special instructions</h3>
+                        <p class="text-gray-500 text-base font-rubik font-medium pb-1">Any specific preferences ? Let the restaurant know. </p>
+                    </div>
+                    <div class="pt-3">
+                        <input class="w-full h-24 rounded-lg border border-gray-300">
+                    </div>
+                    <div class="pt-8 w-full">
+                        <h3 class="text-gray-600 text-xl font-rubik font-semibold pb-2 ">If this item is not available</h3>
+                        <div class="w-full flex justify-between border border-gray-300 rounded-lg">
+                            <p class="text-gray-500 text-base font-rubik font-medium p-3">Remove it from my order</p>
+                            <img src="../assets/downArrow.svg" class="pr-3">
                         </div>
-                        <p class="text-black text-base font-normal">Success: You have added
-                           
-                             to your product comparison!</p>
                     </div>
-                    <div class="pl-3 flex gap-3">
-                        <button class="bg-blue-700 text-yellow-300 text-base font-semibold px-4 pb-2 pt-1 rounded hover:bg-blue-800 hover:duration-300 hover:translate-x-1">Compare Now</button>
-                        <button  class=" bg-white text-blue-800 text-base font-semibold px-4 pb-2 pt-1 rounded hover:bg-blue-800 hover:text-white hover:duration-300 border-2 border-blue-800 hover:translate-x-1">Comfirm Order</button>
-                    </div> -->
                 </div>
+
         </div> 
     </div>
 

@@ -5,24 +5,18 @@ const store = reactive({
   ItemPopUp : false,
 
   selectItem : [],
-  selectItemId : [],
+  selectItemId : ref(),
   
   silectItemPopUp(item){
     this.ItemPopUp = true
     this.selectItem.push(item)
-    if(this.selectItemId.length == 0){
-
-        this.selectItemId.push(item.id)
-    }
+    this.selectItemId = item.id
    
    
   },
 
   closePopup(){
     this.ItemPopUp = false
-     this.selectItemId = null
-   
-   
   }
 
 })
