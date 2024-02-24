@@ -8,6 +8,7 @@ const store = reactive({
   OrderShow : false,
   callMe : ref(''),
   callTrue : false,
+  popupCount : ref(1),
 
   silectItemPopUp(item){
     this.ItemPopUp = true
@@ -27,6 +28,19 @@ const store = reactive({
     this.OrderShow = false
     this.callMe = 'call me'
     this.callTrue = true
+  },
+
+  popupIncrementBtn(){
+    ++this.popupCount
+  },
+
+  popupDicrementBtn(){
+   
+    if(this.popupCount == 1){
+      this.popupCount = 1
+    }else{
+      --this.popupCount
+    }
   }
   
 

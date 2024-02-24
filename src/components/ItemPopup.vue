@@ -27,21 +27,21 @@ axios.get(`https://dummyjson.com/recipes/${itemId}`)
                 </div>
                 <div class="w-11/12 mx-auto ">
                     <div class="pt-5">
-                        <P class="text-gray-900 text-xl font-rubik font-semibold pb-1 capitalize">{{ singleProduct.name }}</P>
+                        <P class="text-gray-900 text-lg font-rubik font-semibold pb-1 capitalize">{{ singleProduct.name }}</P>
                         <P class="text-gray-700 text-base font-rubik font-medium pb-1 ">{{ singleProduct.servings }} pcs </P>
                     </div>
                     <div class="pt-3">
-                        <P class="text-gray-900 text-lg font-rubik font-semibold pb-1 capitalize">Tk {{ singleProduct.caloriesPerServing }}</P>
+                        <P class="text-gray-900 text-base font-rubik font-semibold pb-1 capitalize">Tk {{ singleProduct.caloriesPerServing }}</P>
                     </div>
                     <div class="pt-3">
-                        <h3 class="text-gray-600 text-xl font-rubik font-semibold pb-1 capitalize">Special instructions</h3>
+                        <h3 class="text-gray-600 text-lg font-rubik font-semibold pb-1 capitalize">Special instructions</h3>
                         <p class="text-gray-500 text-base font-rubik font-medium pb-1">Any specific preferences ? Let the restaurant know. </p>
                     </div>
                     <div class="pt-3">
                         <input type="text" class="w-full h-24 rounded-lg border border-gray-300">
                     </div>
                     <div class="pt-8 w-full">
-                        <h3 class="text-gray-600 text-xl font-rubik font-semibold pb-2 ">If this item is not available</h3>
+                        <h3 class="text-gray-600 text-lg font-rubik font-semibold pb-2 ">If this item is not available</h3>
                         <div @click="store.popupOrderShow()" class="w-full flex justify-between border border-gray-300 rounded-lg cursor-pointer">
                             <p v-if="!store.callTrue" class="text-gray-500 text-base font-rubik font-medium p-3">Remove it from my order</p>
                             <p v-if="store.callTrue" class="text-gray-500 text-base font-rubik font-medium p-3">Call me</p>
@@ -60,13 +60,13 @@ axios.get(`https://dummyjson.com/recipes/${itemId}`)
                     <div class="w-11/12 mx-auto flex">
                         <div class="w-1/4 ">
                             <div class="flex space-x-3">
-                                <div class="w-8 h-8 bg-gray-50 rounded-full border flex justify-center cursor-pointer">
+                                <div @click="store.popupDicrementBtn()" :class="store.popupCount == 1 ? 'cursor-not-allowed' : 'cursor-pointer'" class="w-8 h-8 bg-gray-50 rounded-full border flex justify-center cursor-pointer">
                                     <img class="" src="../assets/minus.svg">
                                 </div>
                                 <p class="text-gray-800 text-base font-rubik font-normal pt-1 ">
-                                    1
+                                    {{ store.popupCount }}
                                 </p>
-                                <div class="w-8 h-8 bg-gray-50 rounded-full border flex justify-center cursor-pointer hover:bg-pink-100">
+                                <div @click="store.popupIncrementBtn()" class="w-8 h-8 bg-gray-50 rounded-full border flex justify-center cursor-pointer hover:bg-pink-100">
                                     <img class="" src="../assets/plus.svg">
                                 </div>
                             </div>
@@ -78,7 +78,6 @@ axios.get(`https://dummyjson.com/recipes/${itemId}`)
                         </div>
                     </div>
                 </div>
-
             </div> 
         </div>
 
