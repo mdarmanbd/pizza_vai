@@ -83,7 +83,7 @@ onBeforeMount(()=>{
             <div class="w-full bg-white">
                 <div class="flex gap-5">
                     <!------>
-                    <div class="w-full sm:w-full md:w-full lg:w-2/3 xl:w-2/3">
+                    <div class="w-full sm:w-full md:w-full lg:w-2/3 xl:w-2/3 ">
                         <ItemComponent ></ItemComponent>
                     </div>
                     <!------>
