@@ -1,5 +1,6 @@
 <script setup>
-
+import { addToCart } from '../store/addToCart';
+import addToCartComponentVue from './addToCartComponent.vue';
 
 </script>
 
@@ -7,16 +8,19 @@
     <div class="w-full">
        <div class="pt-3 px-3 pb-2">
            <div class="flex justify-around gap-2 w-full shadow-lg">
-                <div class="border w-1/2 text-center rounded-lg shadow">
-                    <button class="text-pink-500 text-base font-rubik font-normal text-center py-3">Delivery</button>
+                <div class="border w-1/2 text-center rounded-lg shadow hover:bg-pink-50">
+                    <button class="text-pink-500 text-base font-rubik font-normal text-center py-3">
+                        Delivery
+                        <br>
+                        <samp v-if="!addToCart.showItemPopup" class="text-gray-400 text-sm">20min</samp>
+                    </button>
                 </div>
                 <div class="border w-1/2 text-center rounded-lg shadow">
                     <button class="text-gray-500 text-base font-rubik font-normal text-center py-3">Pick-up</button>
                 </div>
            </div>
        </div>
-
-       <div class="w-full px-3 pb-3">
+       <div v-if="addToCart.hungryComponent" class="w-full px-3 pb-3">
             <div class="flex justify-center pt-10 pb-5">
                 <img src="../assets/download.png" class="w-28">
             </div>
@@ -35,6 +39,10 @@
             <div class="w-full bg-gray-300 rounded-lg text-center ">
                 <button class="text-white text-sm py-2 font-rubik font-normal text-center">Review payment and address</button>
             </div>
+       </div>
+       <!---- add to cart component ---->
+       <div v-if="!addToCart.hungryComponent">
+           <addToCartComponentVue></addToCartComponentVue>
        </div>
        
     </div>

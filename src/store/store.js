@@ -1,4 +1,5 @@
 import{reactive, ref} from 'vue'
+import { addToCart } from './addToCart'
 
 
 const store = reactive({
@@ -14,6 +15,8 @@ const store = reactive({
     this.ItemPopUp = true
     this.selectItem.push(item)
     this.selectItemId = item.id
+    // popup show
+    addToCart.showItemPopup = true
   },
 
   closePopup(){

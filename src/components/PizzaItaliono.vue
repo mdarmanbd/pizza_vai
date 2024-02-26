@@ -90,6 +90,9 @@ onBeforeMount(()=>{
                     <!------>
                     <div class="hidden sm:hidden md:hidden lg:block xl:block w-2/6 bg-white border rounded-lg shadow h-[50vh] overflow-y-auto">
                         <DeliverySideBar></DeliverySideBar>
+
+
+
                     </div>
                 </div>
             </div>

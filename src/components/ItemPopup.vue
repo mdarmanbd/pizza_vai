@@ -1,6 +1,7 @@
 <script setup>
 import {ref} from 'vue';
 import { store } from '../store/store';
+import { addToCart } from '../store/addToCart';
 import axios from 'axios';
 
 const itemId = store.selectItemId
@@ -17,7 +18,7 @@ axios.get(`https://dummyjson.com/recipes/${itemId}`)
 </script>
 
 <template>
-        <div class="fixed top-0 left-0 w-full h-full">
+        <div v-if="addToCart.showItemPopup" class="fixed top-0 left-0 w-full h-full">
             <div class="relative w-11/12 sm:w-11/12 md:w-1/2 lg:w-1/2 xl:w-1/2 top-10 h-[85%] pb-0 bg-white rounded-lg mx-auto overflow-y-auto shadow-xl">
                 <div class="w-full">
                     <img :src="singleProduct.image" class="w-full h-64 rounded-t-lg">
@@ -72,7 +73,7 @@ axios.get(`https://dummyjson.com/recipes/${itemId}`)
                             </div>
                         </div>
                         <div class="w-3/4 ">
-                            <div class="bg-pink-600 rounded-lg w-full cursor-pointer hover:scale-[1.1] hover:transition transition">
+                            <div @click="addToCart.addCart(singleProduct , store.popupCount)" class="bg-pink-600 rounded-lg w-full cursor-pointer hover:scale-[1.1] hover:transition transition">
                                 <p class="text-center text-white text-base font-rubik py-1.5">Add to cart</p>
                             </div>
                         </div>
