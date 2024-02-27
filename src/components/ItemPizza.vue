@@ -1,11 +1,13 @@
 
 <script setup>
 import { store } from '../store/store';
+import { addToCart } from '../store/addToCart';
 
 const props = defineProps([
     'itemPizza'
 ])
 
+const itemArray = addToCart.cartItem
 
 </script>
 
@@ -28,6 +30,10 @@ const props = defineProps([
                                 <p class="text-gray-700 text-sm font-rubik font-medium pt-8">
                                     Tk: {{ item.caloriesPerServing }}
                                 </p>
+
+                                <p class="text-gray-700 text-sm font-rubik font-medium pt-8">
+                                    count: {{ addToCart.cartItem[0].item }}
+                                </p>
                             </div>
                             <div class="w-2/5 ">
                                 <img :src="item.image">
@@ -35,7 +41,14 @@ const props = defineProps([
                         </div>
                     </div>
                     <img class="w-8 bg-white hover:bg-red-50 rounded-full absolute right-2 bottom-5" src="../assets/plus.svg">
+                    
+                    
                 </div>
+
+                <div v-for="(item,index) in itemArray" :key="item.id" class="w-full">
+                    <p>{{ item.count }}</p>
+                </div>
+
             </div>
         </div>  
     </div>

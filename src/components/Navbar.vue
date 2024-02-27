@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import {nav} from '../store/nav.js'
 import { store } from '../store/store';
+import { addToCart } from '../store/addToCart';
 import GoogleMapLocation from './GoogleMapLocation.vue';
 import LogInFrom from './LogInFrom.vue';
 import ItemPopupVue from './ItemPopup.vue';
@@ -44,7 +45,7 @@ import ItemPopupVue from './ItemPopup.vue';
                 <div class="">
                     <img src="../assets/shoppingCart.svg">
                 </div>
-                <p class="pt-1 font-raleway text-xl font-normal">2</p> 
+                <p class="pt-1 font-rubik text-xl font-normal">{{ addToCart.totalCount }}</p> 
             </div>
         </div>
     </div>

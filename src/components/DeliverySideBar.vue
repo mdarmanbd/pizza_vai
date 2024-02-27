@@ -12,7 +12,7 @@ import addToCartComponentVue from './addToCartComponent.vue';
                     <button class="text-pink-500 text-base font-rubik font-normal text-center py-3">
                         Delivery
                         <br>
-                        <samp v-if="!addToCart.showItemPopup" class="text-gray-400 text-sm">20min</samp>
+                       <!--- <samp v-if="!addToCart.showItemPopup" class="text-gray-400 text-sm">20min</samp> -->
                     </button>
                 </div>
                 <div class="border w-1/2 text-center rounded-lg shadow">
@@ -20,7 +20,7 @@ import addToCartComponentVue from './addToCartComponent.vue';
                 </div>
            </div>
        </div>
-       <div v-if="addToCart.hungryComponent" class="w-full px-3 pb-3">
+       <div v-if="addToCart.cartItem.length == 0" class="w-full px-3 pb-3">
             <div class="flex justify-center pt-10 pb-5">
                 <img src="../assets/download.png" class="w-28">
             </div>
@@ -41,7 +41,7 @@ import addToCartComponentVue from './addToCartComponent.vue';
             </div>
        </div>
        <!---- add to cart component ---->
-       <div v-if="!addToCart.hungryComponent">
+       <div v-if="addToCart.cartItem.length !== 0">
            <addToCartComponentVue></addToCartComponentVue>
        </div>
        
