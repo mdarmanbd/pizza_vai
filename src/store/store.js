@@ -13,7 +13,17 @@ const store = reactive({
 
   silectItemPopUp(item){
     this.ItemPopUp = true
-    this.selectItem.push(item)
+
+    this.selectItem.push({
+      item : item,
+      
+    })
+
+    // click the popup & fire the hidePlushIcon hidden
+    item.hidePlusIcon = false
+
+    console.log(item)
+
     this.selectItemId = item.id
     // popup show
     addToCart.showItemPopup = true

@@ -1,5 +1,6 @@
 
 <script setup>
+import {ref} from 'vue'
 import { store } from '../store/store';
 import { addToCart } from '../store/addToCart';
 
@@ -8,6 +9,58 @@ const props = defineProps([
 ])
 
 const itemArray = addToCart.cartItem
+// const singleItemCount = ref(1)
+
+window.item = itemArray;
+
+
+const doItemExists = (id) => {
+    let found = true;
+    for(let i = 0; i < itemArray.length; i++) {
+        if (itemArray[i].item.id == id) {
+            found = false;
+            break;
+        }
+    }
+    return found;
+}
+
+const findCount = (id) => {
+    let num = ref()
+    for(let i = 0; i < itemArray.length; i++){
+
+        if(id == itemArray[i].item.id){
+            num = itemArray[i].count
+            return num
+        }
+    }
+}
+
+const plusButton= (item) => {
+    if(!item.hasOwnProperty('hidePlusIcon')) {
+        item.hidePlusIcon = true;
+      }
+      else{
+        item.hidePlusIcon = true
+      }
+      item.singleItemCount = 1;
+      
+    //   addToCart.singleItem.push(item) 
+    
+}
+
+const singleItemIncriment = (item) => {
+    item.singleItemCount++
+}
+
+const singleItemDecrement = (item) => {
+    item.singleItemCount--
+}
+
+const singleItemDeleteIcon = (item) => {
+    item.hidePlusIcon = false
+
+}
 
 </script>
 
@@ -30,25 +83,42 @@ const itemArray = addToCart.cartItem
                                 <p class="text-gray-700 text-sm font-rubik font-medium pt-8">
                                     Tk: {{ item.caloriesPerServing }}
                                 </p>
-
-                                <p class="text-gray-700 text-sm font-rubik font-medium pt-8">
-                                    count: {{ addToCart.cartItem[0].item }}
-                                </p>
+                               
                             </div>
                             <div class="w-2/5 ">
                                 <img :src="item.image">
                             </div>
                         </div>
                     </div>
-                    <img class="w-8 bg-white hover:bg-red-50 rounded-full absolute right-2 bottom-5" src="../assets/plus.svg">
-                    
-                    
-                </div>
+                    <!--- A HUGE OPARETION --->
+                    <!--plus icone--- !item.hidePlusIcon --->
+                    <div @click="plusButton(item)" v-if="!item.hidePlusIcon" class="">
+                        <img v-if="doItemExists(item.id)" class="w-8 bg-white hover:bg-red-50 rounded-full absolute right-2 bottom-5" src="../assets/plus.svg">
+                    </div>
+                    <!---quantiy mini bar--->
+                   <div v-if="item.hidePlusIcon" class="w-24 bg-white hover:bg-red-50 rounded-full absolute right-2 bottom-5">
+                        <div class="flex justify-around w-full border border-gray-300 rounded-lg">
+                            <div @click="singleItemDecrement(item)" class="pt-0.5 rounded-lg bg-gray-200 hover:bg-pink-200 cursor-pointer">
+                                <img @click="singleItemDeleteIcon(item)" v-if="item.singleItemCount == 1" src="../assets/delete.svg">
+                                <img v-if="item.singleItemCount !== 1" src="../assets/minus.svg">
+                            </div>
+                            <div class="pt-0.5 pb-1 text-sm font-rubik font-normal">
+                                <!-- {{ item.count }} -->
+                                {{ item.singleItemCount }}
+                            </div>
+                            <div @click="singleItemIncriment(item)" class="pt-1 rounded-lg bg-gray-200 hover:bg-pink-200 cursor-pointer">
+                                <img src="../assets/plus.svg" class="">
+                            </div>
+                        </div>
+                   </div>
+                    <!---only quantity-->
+                    <div v-if="!doItemExists(item.id)" >
+                        <div class="bg-pink-600 rounded-full absolute right-2 bottom-5">
+                           <p class="text-white font-rubik font-normal text-base text-center p-1 w-8">{{ findCount(item.id) }}</p> 
+                        </div>
+                    </div>
 
-                <div v-for="(item,index) in itemArray" :key="item.id" class="w-full">
-                    <p>{{ item.count }}</p>
                 </div>
-
             </div>
         </div>  
     </div>

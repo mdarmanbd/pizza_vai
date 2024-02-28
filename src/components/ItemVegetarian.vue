@@ -37,6 +37,7 @@ const props = defineProps([
                     </div>
                 <img class="w-8 bg-white hover:bg-red-50 rounded-full absolute right-2 bottom-5" src="../assets/plus.svg">
             </div>
+           
         </div>
     </div>
 </template>

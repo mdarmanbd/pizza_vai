@@ -52,11 +52,11 @@ const itemSalad = ref('')
 <template>
 <section>
     <!---item one--->
-    <ItemPizzaVue :itemPizza="itemPizza"></ItemPizzaVue>
+    <ItemPizzaVue :itemPizza="itemPizza"/>
     <!---item number two--->
-    <ItemVegetarianVue :itemVegetarian="itemVegetarian"></ItemVegetarianVue>
+    <ItemVegetarianVue :itemVegetarian="itemVegetarian"/>
     <!---item number three----->
-    <itemCookiesVue :itemCookies="itemCookies"></itemCookiesVue>
+    <itemCookiesVue :itemCookies="itemCookies"/>
     <!----item number four---->
     <ItemPastaVue :itemPasta = "itemPasta"></ItemPastaVue>
    <!----item number five---->

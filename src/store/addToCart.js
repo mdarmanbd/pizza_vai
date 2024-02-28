@@ -1,13 +1,18 @@
 
 import{reactive,ref,computed} from 'vue'
+import { store } from './store'
 
-const addToCart = reactive({
-    
+const addToCart = reactive({ 
     cartItem : [],
     localStorageCartItem : [],
     showItemPopup : true,
+    // singleItem  : [],
 
     addCart(singleProduct, popupCount){
+
+        // this.singleItem.hidePlusIcon = false
+        // console.log(this.singleItem)
+
 
         const CartItemIndex = this.cartItem.findIndex(item)
         function item (itemId) {
@@ -18,17 +23,11 @@ const addToCart = reactive({
                 item: singleProduct,
                 count: popupCount,
             })
-
         }else{
             this.cartItem[CartItemIndex].count += popupCount;
         }
-
-        // console.log(CartItemIndex)
-        // localStorage.setItem('cartItem',JSON.stringify(this.cartItem))
         this.showItemPopup = false
-
-        
-
+        store.ItemPopUp = false
     },
 
     totalCount:computed(()=>{
@@ -39,9 +38,7 @@ const addToCart = reactive({
         return totalC
     }),
 
-    // calculateTotalCount() {
-    //     return this.cartItem.reduce((total, item) => total + item.count, 0);
-    // },
+
     
     itemCountIncriment(item){
         return item.count++
