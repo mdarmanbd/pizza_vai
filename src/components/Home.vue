@@ -29,7 +29,7 @@ import Bennar from './bennar.vue';
                         </div>
                         <div class="p-3">
                             <div class="flex justify-between">
-                                <p class="text-gray-950 text-base font-raleway font-normal">Piza italiano Ristorante</p>
+                                <p class="text-gray-950 text-base font-raleway font-normal">Piza vai italiano Ristorante</p>
                                 <div class="flex gap-1">
                                     <img src="../assets/star.svg">
                                      <p class="text-gray-700 text-base font-raleway font-normal "> 4.2(51)</p>
