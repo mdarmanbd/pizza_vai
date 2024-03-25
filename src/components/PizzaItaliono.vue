@@ -57,9 +57,7 @@ onBeforeMount(()=>{
             </div>
         </div>
         <!------->
-        <div>
-           <!-- {{ items }} -->
-        </div>
+        
         <div class="w-full">
             <div class="bg-white shadow-lg border-t rounded">
                 <div class="flex py-3 px-2 shadow-lg border-b">

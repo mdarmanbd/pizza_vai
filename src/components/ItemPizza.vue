@@ -45,7 +45,7 @@ const plusButton= (item) => {
       }
       item.singleItemCount = 1;
       
-    //   addToCart.singleItem.push(item) 
+  
     
 }
 

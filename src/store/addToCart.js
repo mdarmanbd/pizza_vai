@@ -6,13 +6,9 @@ const addToCart = reactive({
     cartItem : [],
     localStorageCartItem : [],
     showItemPopup : true,
-    // singleItem  : [],
+
 
     addCart(singleProduct, popupCount){
-
-        // this.singleItem.hidePlusIcon = false
-        // console.log(this.singleItem)
-
 
         const CartItemIndex = this.cartItem.findIndex(item)
         function item (itemId) {
